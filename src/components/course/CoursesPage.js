@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import * as courseActions from '../../actions/courseActions';
 
 class CoursesPage extends React.Component {
+    //** CONSTRUCTOR */
     constructor(props, context) {
         super(props, context);
 
@@ -17,6 +18,7 @@ class CoursesPage extends React.Component {
         this.onClickSave = this.onClickSave.bind(this);
     }
 
+    //** CHILD FUNCTIONS CALLED BY RENDER */
     onTitleChange(event) {
         const course = this.state.course;
         course.title = event.target.value;
@@ -31,6 +33,7 @@ class CoursesPage extends React.Component {
         return <div key={index}>{course.title}</div>;
     }
 
+    //** RENDER */
     render (){
         return (
             <div>
@@ -50,12 +53,13 @@ class CoursesPage extends React.Component {
     }
 }
 
-//type validation
+//** PROPTYPE VALIDATION */
 CoursesPage.propTypes = {
     courses: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired
 };
 
+//** REDUX RELATED FUNCTIONS */
 function mapStateToProps(state, ownProps) {
     return {
         courses: state.courses//properties to see on component

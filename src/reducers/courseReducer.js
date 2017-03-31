@@ -1,9 +1,10 @@
+import * as types from '../actions/actionTypes';
 //reducer takes current state and action, and returns
 //a new state.
 //initial state is an array
 export default function courseReducer(state = [], action) {
     switch(action.type) {
-        case 'CREATE_COURSE': 
+        case types.CREATE_COURSE: 
             //-- wrong because state is immutable
             // state.push(action.course);
             // return state;
