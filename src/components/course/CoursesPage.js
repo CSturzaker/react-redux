@@ -6,7 +6,7 @@ class CoursesPage extends React.Component {
 
         //local state
         this.state = {
-            course: { title: null}
+            course: { title: ''}
         };
 
         //bind statements for change and save functions
