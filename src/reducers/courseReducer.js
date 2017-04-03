@@ -4,19 +4,11 @@ import * as types from '../actions/actionTypes';
 //initial state is an array
 export default function courseReducer(state = [], action) {
     switch(action.type) {
-        case types.CREATE_COURSE: 
+        case types.LOAD_COURSES_SUCCESS: 
             //-- wrong because state is immutable
             // state.push(action.course);
             // return state;
-
-            //use ES6 spread operator on existing
-            //array.  Effectively explodes array
-            //into individual objects.  We then
-            //create a new object and return new 
-            //array
-            return [...state,
-                Object.assign({}, action.course)
-            ];
+            return action.courses;
         default:
             return state;
     }
